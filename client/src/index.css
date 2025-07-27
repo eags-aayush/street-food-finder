@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom styles for the marketplace design */
+.hero-section {
+  background: linear-gradient(135deg, hsl(228, 76%, 71%) 0%, hsl(252, 50%, 62%) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.dashboard-stats {
+  background: linear-gradient(45deg, hsl(316, 85%, 79%) 0%, hsl(348, 77%, 61%) 100%);
+}
+
+.order-status-pending {
+  background-color: hsl(45, 93%, 89%);
+  border-left: 4px solid hsl(45, 100%, 51%);
+}
+
+.order-status-fulfilled {
+  background-color: hsl(195, 100%, 95%);
+  border-left: 4px solid hsl(189, 100%, 42%);
+}
+
+.user-role-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Gradient backgrounds for admin dashboard stats */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, hsl(228, 76%, 71%) 0%, hsl(252, 50%, 62%) 100%);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, hsl(142, 71%, 45%) 0%, hsl(142, 71%, 35%) 100%);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, hsl(45, 100%, 51%) 0%, hsl(25, 100%, 50%) 100%);
+}
+
+.bg-gradient-info {
+  background: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(220, 100%, 50%) 100%);
+}
+
+/* Enhanced button styling */
+.btn-hover-lift {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Custom scrollbar for tables */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: hsl(60, 4.8%, 95.9%);
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: hsl(25, 5.3%, 44.7%);
+  border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: hsl(20, 14.3%, 4.1%);
+}
+
+/* Status indicators */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-active {
+  background-color: hsl(142, 71%, 45%);
+}
+
+.status-pending {
+  background-color: hsl(45, 100%, 51%);
+}
+
+.status-suspended {
+  background-color: hsl(0, 84.2%, 60.2%);
+}
