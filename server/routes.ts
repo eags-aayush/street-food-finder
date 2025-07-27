@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { loginSchema, registerVendorSchema, registerSupplierSchema, insertProductSchema } from "@shared/schema";
+import { storage } from "./storage.ts";
+import { loginSchema, registerVendorSchema, registerSupplierSchema, insertProductSchema } from "../shared/schema.ts";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Auth routes

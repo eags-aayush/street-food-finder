@@ -1,5 +1,5 @@
-import { db } from "./db";
-import { users, products } from "@shared/schema";
+import { db } from "./db.ts";
+import { users, products } from "../shared/schema.ts";
 import { randomUUID } from "crypto";
 
 export async function seedDatabase() {

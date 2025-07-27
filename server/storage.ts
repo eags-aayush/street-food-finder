@@ -1,5 +1,5 @@
-import { type User, type InsertUser, type Product, type InsertProduct, type Order, type InsertOrder, type OrderItem, type InsertOrderItem, type CartItem, type InsertCartItem, users, products, orders, orderItems, cart } from "@shared/schema";
-import { db } from "./db";
+import { type User, type InsertUser, type Product, type InsertProduct, type Order, type InsertOrder, type OrderItem, type InsertOrderItem, type CartItem, type InsertCartItem, users, products, orders, orderItems, cart } from "../shared/schema.ts";
+import { db } from "./db.ts";
 import { eq } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
