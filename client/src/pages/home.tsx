@@ -18,6 +18,13 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&h=1316")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}></div>
+        </div>
         <div className="relative container mx-auto px-4 py-16">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-6">
@@ -47,18 +54,25 @@ export default function Home() {
 
           {/* Role Selection Cards */}
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0">
-              <CardHeader className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center rounded-t-lg">
+            <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0 animate-slide-up relative overflow-hidden">
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `url("https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600")`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}></div>
+              </div>
+              <CardHeader className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center rounded-t-lg relative z-10">
                 <CardTitle className="flex items-center justify-center text-xl">
                   <ShoppingCart className="mr-2 h-7 w-7" />
                   Street Vendor
                 </CardTitle>
                 <p className="text-orange-100 text-sm mt-1">स्ट्रीट फूड वेंडर</p>
               </CardHeader>
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-6 text-center relative z-10">
                 <div className="mb-4">
                   <div className="text-4xl mb-2">🍛</div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-700 mb-4 font-medium">
                     Browse premium raw materials, manage inventory, and place orders from verified suppliers across the city.
                   </p>
                 </div>
@@ -80,18 +94,25 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0">
-              <CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center rounded-t-lg">
+            <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0 animate-slide-up-delayed relative overflow-hidden">
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `url("https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600")`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}></div>
+              </div>
+              <CardHeader className="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center rounded-t-lg relative z-10">
                 <CardTitle className="flex items-center justify-center text-xl">
                   <Warehouse className="mr-2 h-7 w-7" />
                   Supplier
                 </CardTitle>
                 <p className="text-blue-100 text-sm mt-1">सप्लायर/होलसेलर</p>
               </CardHeader>
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-6 text-center relative z-10">
                 <div className="mb-4">
                   <div className="text-4xl mb-2">🏭</div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-700 mb-4 font-medium">
                     List your products, manage bulk orders, and connect with hundreds of street food vendors.
                   </p>
                 </div>
@@ -113,18 +134,25 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0">
-              <CardHeader className="bg-gradient-to-r from-purple-600 to-violet-600 text-white text-center rounded-t-lg">
+            <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0 animate-bounce-subtle relative overflow-hidden">
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600")`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}></div>
+              </div>
+              <CardHeader className="bg-gradient-to-r from-purple-600 to-violet-600 text-white text-center rounded-t-lg relative z-10">
                 <CardTitle className="flex items-center justify-center text-xl">
                   <ShieldQuestion className="mr-2 h-7 w-7" />
                   Admin
                 </CardTitle>
                 <p className="text-purple-100 text-sm mt-1">एडमिन पैनल</p>
               </CardHeader>
-              <CardContent className="p-6 text-center">
+              <CardContent className="p-6 text-center relative z-10">
                 <div className="mb-4">
                   <div className="text-4xl mb-2">🛡️</div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-700 mb-4 font-medium">
                     Complete platform management, user oversight, and marketplace administration.
                   </p>
                 </div>

@@ -49,11 +49,35 @@ export default function Welcome() {
         <div className="mb-12 animate-slide-down">
           <div className="flex items-center justify-center mb-6">
             <Users className="h-12 w-12 mr-4 text-yellow-300" />
-            <div className="text-left">
-              <h2 className="text-2xl font-bold text-yellow-300">हम हैं Team</h2>
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                ZUPP UP
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-yellow-300 mb-2">We are Team</h2>
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent mb-4">
+                ZIPP UP
               </h1>
+              
+              {/* Team Members */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6 text-sm">
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-1">
+                  <div className="text-yellow-300 font-semibold">Diya Agarwal</div>
+                  <div className="text-xs opacity-80">Team Lead</div>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-2">
+                  <div className="text-yellow-300 font-semibold">Vijay Jangid</div>
+                  <div className="text-xs opacity-80">Developer</div>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-3">
+                  <div className="text-yellow-300 font-semibold">Garvita Agarwal</div>
+                  <div className="text-xs opacity-80">Designer</div>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-1">
+                  <div className="text-yellow-300 font-semibold">Harshita Gehlot</div>
+                  <div className="text-xs opacity-80">Analyst</div>
+                </div>
+                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-2">
+                  <div className="text-yellow-300 font-semibold">Karan Purohit</div>
+                  <div className="text-xs opacity-80">Developer</div>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -62,11 +86,15 @@ export default function Welcome() {
               <Sparkles className="h-8 w-8 mr-3 text-yellow-300 animate-spin-slow" />
               Welcome to Our Solution!
             </h3>
-            <p className="text-xl opacity-90 mb-6 leading-relaxed">
-              Street Food Marketplace - सबसे बेस्ट प्लेटफॉर्म जो कनेक्ट करता है 
-              <br />
-              <span className="text-yellow-300 font-semibold">Street Food Vendors</span> को 
-              <span className="text-green-300 font-semibold"> Quality Suppliers</span> के साथ
+            <p className="text-xl opacity-90 mb-4 leading-relaxed">
+              This is a welcome introduction showcasing our team's collaborative work on the Street Food Marketplace platform.
+            </p>
+            <p className="text-lg opacity-80 mb-6 leading-relaxed">
+              Our comprehensive solution connects <span className="text-yellow-300 font-semibold">Street Food Vendors</span> with 
+              <span className="text-green-300 font-semibold"> Quality Suppliers</span>, creating a seamless marketplace ecosystem.
+            </p>
+            <p className="text-sm opacity-70 italic">
+              Note: This welcome screen is a temporary introduction to demonstrate our team's collaborative approach to solving marketplace challenges.
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 mb-8">
