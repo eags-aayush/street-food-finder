@@ -18,7 +18,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20"></div>
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&h=1316")`,
             backgroundSize: 'cover',
@@ -55,7 +55,7 @@ export default function Home() {
           {/* Role Selection Cards */}
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0 animate-slide-up relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 opacity-40">
                 <div className="absolute inset-0" style={{
                   backgroundImage: `url("https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600")`,
                   backgroundSize: 'cover',
@@ -95,7 +95,7 @@ export default function Home() {
             </Card>
 
             <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0 animate-slide-up-delayed relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 opacity-40">
                 <div className="absolute inset-0" style={{
                   backgroundImage: `url("https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600")`,
                   backgroundSize: 'cover',
@@ -135,7 +135,7 @@ export default function Home() {
             </Card>
 
             <Card className="hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-white/90 backdrop-blur-sm border-0 animate-bounce-subtle relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 opacity-40">
                 <div className="absolute inset-0" style={{
                   backgroundImage: `url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600")`,
                   backgroundSize: 'cover',

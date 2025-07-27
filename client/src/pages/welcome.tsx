@@ -37,6 +37,14 @@ export default function Welcome() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
+        {/* Team collaboration background image */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&h=1316")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}></div>
+        </div>
         {/* Animated background elements */}
         <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full animate-float"></div>
         <div className="absolute top-1/3 right-16 w-20 h-20 bg-white/20 rounded-full animate-float-delayed"></div>
@@ -55,28 +63,58 @@ export default function Welcome() {
                 ZIPP UP
               </h1>
               
-              {/* Team Members */}
+              {/* Team Members with LinkedIn Links */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6 text-sm">
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-1">
+                <a 
+                  href="https://www.linkedin.com/in/diya-agarwal-b85228336" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white/30 backdrop-blur-sm rounded-lg p-3 animate-fade-in-1 hover:bg-white/40 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                >
                   <div className="text-yellow-300 font-semibold">Diya Agarwal</div>
                   <div className="text-xs opacity-80">Team Lead</div>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-2">
+                  <div className="text-xs text-blue-200 mt-1">LinkedIn →</div>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/vijay----jangid" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white/30 backdrop-blur-sm rounded-lg p-3 animate-fade-in-2 hover:bg-white/40 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                >
                   <div className="text-yellow-300 font-semibold">Vijay Jangid</div>
                   <div className="text-xs opacity-80">Developer</div>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-3">
+                  <div className="text-xs text-blue-200 mt-1">LinkedIn →</div>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/garvita-agarwal-0995a7322" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white/30 backdrop-blur-sm rounded-lg p-3 animate-fade-in-3 hover:bg-white/40 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                >
                   <div className="text-yellow-300 font-semibold">Garvita Agarwal</div>
                   <div className="text-xs opacity-80">Designer</div>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-1">
+                  <div className="text-xs text-blue-200 mt-1">LinkedIn →</div>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/harshita-gehlot-4635a6336" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white/30 backdrop-blur-sm rounded-lg p-3 animate-fade-in-1 hover:bg-white/40 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                >
                   <div className="text-yellow-300 font-semibold">Harshita Gehlot</div>
                   <div className="text-xs opacity-80">Analyst</div>
-                </div>
-                <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 animate-fade-in-2">
+                  <div className="text-xs text-blue-200 mt-1">LinkedIn →</div>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/karan-purohit-417717352" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white/30 backdrop-blur-sm rounded-lg p-3 animate-fade-in-2 hover:bg-white/40 transition-all duration-300 cursor-pointer transform hover:scale-105"
+                >
                   <div className="text-yellow-300 font-semibold">Karan Purohit</div>
                   <div className="text-xs opacity-80">Developer</div>
-                </div>
+                  <div className="text-xs text-blue-200 mt-1">LinkedIn →</div>
+                </a>
               </div>
             </div>
           </div>
