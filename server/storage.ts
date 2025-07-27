@@ -1,4 +1,6 @@
-import { type User, type InsertUser, type Product, type InsertProduct, type Order, type InsertOrder, type OrderItem, type InsertOrderItem, type CartItem, type InsertCartItem } from "@shared/schema";
+import { type User, type InsertUser, type Product, type InsertProduct, type Order, type InsertOrder, type OrderItem, type InsertOrderItem, type CartItem, type InsertCartItem, users, products, orders, orderItems, cart } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -35,6 +37,151 @@ export interface IStorage {
   updateCartItem(id: string, quantity: number): Promise<void>;
   removeFromCart(id: string): Promise<void>;
   clearCart(vendorId: string): Promise<void>;
+}
+
+export class DatabaseStorage implements IStorage {
+  // User management
+  async getUser(id: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByEmail(email: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.email, email));
+    return user || undefined;
+  }
+
+  async createUser(user: InsertUser): Promise<User> {
+    const [newUser] = await db
+      .insert(users)
+      .values({
+        ...user,
+        id: randomUUID(),
+        createdAt: new Date(),
+      })
+      .returning();
+    return newUser;
+  }
+
+  async updateUserStatus(id: string, status: string): Promise<void> {
+    await db.update(users).set({ status }).where(eq(users.id, id));
+  }
+
+  async getUsersByRole(role: string): Promise<User[]> {
+    return await db.select().from(users).where(eq(users.role, role));
+  }
+
+  // Product management
+  async getProducts(): Promise<Product[]> {
+    return await db.select().from(products);
+  }
+
+  async getProductById(id: string): Promise<Product | undefined> {
+    const [product] = await db.select().from(products).where(eq(products.id, id));
+    return product || undefined;
+  }
+
+  async getProductsBySupplierId(supplierId: string): Promise<Product[]> {
+    return await db.select().from(products).where(eq(products.supplierId, supplierId));
+  }
+
+  async createProduct(product: InsertProduct): Promise<Product> {
+    const [newProduct] = await db
+      .insert(products)
+      .values({
+        ...product,
+        id: randomUUID(),
+        createdAt: new Date(),
+      })
+      .returning();
+    return newProduct;
+  }
+
+  async updateProduct(id: string, updates: Partial<Product>): Promise<void> {
+    await db.update(products).set(updates).where(eq(products.id, id));
+  }
+
+  async deleteProduct(id: string): Promise<void> {
+    await db.delete(products).where(eq(products.id, id));
+  }
+
+  // Order management
+  async getOrders(): Promise<Order[]> {
+    return await db.select().from(orders);
+  }
+
+  async getOrderById(id: string): Promise<Order | undefined> {
+    const [order] = await db.select().from(orders).where(eq(orders.id, id));
+    return order || undefined;
+  }
+
+  async getOrdersByVendorId(vendorId: string): Promise<Order[]> {
+    return await db.select().from(orders).where(eq(orders.vendorId, vendorId));
+  }
+
+  async getOrdersBySupplierId(supplierId: string): Promise<Order[]> {
+    return await db.select().from(orders).where(eq(orders.vendorId, supplierId));
+  }
+
+  async createOrder(order: InsertOrder): Promise<Order> {
+    const [newOrder] = await db
+      .insert(orders)
+      .values({
+        ...order,
+        id: randomUUID(),
+        createdAt: new Date(),
+      })
+      .returning();
+    return newOrder;
+  }
+
+  async updateOrderStatus(id: string, status: string): Promise<void> {
+    await db.update(orders).set({ status }).where(eq(orders.id, id));
+  }
+
+  // Order items
+  async getOrderItems(orderId: string): Promise<OrderItem[]> {
+    return await db.select().from(orderItems).where(eq(orderItems.orderId, orderId));
+  }
+
+  async createOrderItem(orderItem: InsertOrderItem): Promise<OrderItem> {
+    const [newOrderItem] = await db
+      .insert(orderItems)
+      .values({
+        ...orderItem,
+        id: randomUUID(),
+      })
+      .returning();
+    return newOrderItem;
+  }
+
+  // Cart management
+  async getCartItems(vendorId: string): Promise<CartItem[]> {
+    return await db.select().from(cart).where(eq(cart.vendorId, vendorId));
+  }
+
+  async addToCart(cartItem: InsertCartItem): Promise<CartItem> {
+    const [newCartItem] = await db
+      .insert(cart)
+      .values({
+        ...cartItem,
+        id: randomUUID(),
+      })
+      .returning();
+    return newCartItem;
+  }
+
+  async updateCartItem(id: string, quantity: number): Promise<void> {
+    await db.update(cart).set({ quantity }).where(eq(cart.id, id));
+  }
+
+  async removeFromCart(id: string): Promise<void> {
+    await db.delete(cart).where(eq(cart.id, id));
+  }
+
+  async clearCart(vendorId: string): Promise<void> {
+    await db.delete(cart).where(eq(cart.vendorId, vendorId));
+  }
 }
 
 export class MemStorage implements IStorage {
@@ -367,4 +514,4 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();

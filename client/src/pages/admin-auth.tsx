@@ -79,7 +79,7 @@ export default function AdminAuth() {
 
       <div className="relative z-10 container mx-auto px-4 pt-8 pb-8 min-h-screen">
         <div className="flex justify-between items-center mb-8">
-          <Link href="/">
+          <Link href="/home">
             <Button variant="outline" size="sm" className="bg-white/80 backdrop-blur-sm hover:bg-white shadow-lg">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home

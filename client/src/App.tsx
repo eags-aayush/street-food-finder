@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { authStorage } from "@/lib/auth";
 import NotFound from "@/pages/not-found";
+import Welcome from "@/pages/welcome";
 import Home from "@/pages/home";
 import VendorAuth from "@/pages/vendor-auth";
 import SupplierAuth from "@/pages/supplier-auth";
@@ -18,7 +19,8 @@ function Router() {
 
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={Welcome} />
+      <Route path="/home" component={Home} />
       
       {/* Auth routes */}
       <Route path="/vendor/auth" component={VendorAuth} />
@@ -27,13 +29,13 @@ function Router() {
       
       {/* Dashboard routes - protected */}
       <Route path="/vendor/dashboard">
-        {isAuthenticated && user?.role === "vendor" ? <VendorDashboard /> : <Home />}
+        {isAuthenticated && user?.role === "vendor" ? <VendorDashboard /> : <Welcome />}
       </Route>
       <Route path="/supplier/dashboard">
-        {isAuthenticated && user?.role === "supplier" ? <SupplierDashboard /> : <Home />}
+        {isAuthenticated && user?.role === "supplier" ? <SupplierDashboard /> : <Welcome />}
       </Route>
       <Route path="/admin/dashboard">
-        {isAuthenticated && user?.role === "admin" ? <AdminDashboard /> : <Home />}
+        {isAuthenticated && user?.role === "admin" ? <AdminDashboard /> : <Welcome />}
       </Route>
       
       {/* Fallback to 404 */}
